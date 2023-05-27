@@ -13,13 +13,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/instantnoodlep/device.mk)
 
 # Inherit some common Evolution X stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
-EXTRA_UDFPS_ANIMATIONS := true
+# Bootleggers Build Flags
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_USES_BLUR := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_INCLUDE_STOCK_ARCORE := false
 
-PRODUCT_NAME := evolution_instantnoodlep
+# Maintainer Prop
+DEVICE_MAINTAINERS := ZIZZYBOI
+BOOTLEGGERS_BUILD_TYPE := Shishufied
+WITH_GAPPS := true
+
+PRODUCT_NAME := bootleggers_instantnoodlep
 PRODUCT_DEVICE := instantnoodlep
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus

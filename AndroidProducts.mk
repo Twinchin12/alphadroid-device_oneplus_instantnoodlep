@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/bootleg_instantnoodlep.mk
+    $(LOCAL_DIR)/lineage_instantnoodlep.mk
 
 COMMON_LUNCH_CHOICES := \
-    bootleg_instantnoodlep-user \
-    bootleg_instantnoodlep-userdebug \
-    bootleg_instantnoodlep-eng
+    lineage_instantnoodlep-user \
+    lineage_instantnoodlep-userdebug \
+    lineage_instantnoodlep-eng

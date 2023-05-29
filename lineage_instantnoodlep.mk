@@ -13,21 +13,40 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/instantnoodlep/device.mk)
 
 # Inherit some common Evolution X stuff.
-$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Bootleggers Build Flags
-TARGET_BOOT_ANIMATION_RES := 1080
+# Device config
+TARGET_HAS_UDFPS := true
+TARGET_ENABLE_BLUR := true
+TARGET_EXCLUDES_AUDIOFX := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_USES_BLUR := true
-TARGET_INCLUDE_LIVE_WALLPAPERS := true
-TARGET_INCLUDE_STOCK_ARCORE := false
+EXTRA_UDFPS_ANIMATIONS := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SUPPORTS_QUICK_TAP := true
 
-# Maintainer Prop
-DEVICE_MAINTAINERS := ZIZZYBOI
-BOOTLEGGERS_BUILD_TYPE := Shishufied
-WITH_GAPPS := true
+# GAPPS config
+# 0 - NO GAPPS (default)
+# 1 - CORE GAPPS
+# 2 - FULL GAPPS
+WITH_GAPPS := 2
 
-PRODUCT_NAME := bootleggers_instantnoodlep
+# Use Google Telephony pack (Dialer, Contacts, Messaging) on GAPPS builds
+# Default = true
+TARGET_USE_GOOGLE_TELEPHONY := true
+
+# Include Pixel Framework on FULL GAPPS builds
+# Default = true
+TARGET_USE_PIXEL_FRAMEWORK := true
+
+# Debugging
+TARGET_INCLUDE_MATLOG := false
+TARGET_DEFAULT_ADB_ENABLED := true
+
+# Maintainer
+ALPHA_BUILD_TYPE := Unofficial
+ALPHA_MAINTAINER := zizzyboi
+
+PRODUCT_NAME := lineage_instantnoodlep
 PRODUCT_DEVICE := instantnoodlep
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
